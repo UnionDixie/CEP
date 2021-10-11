@@ -74,4 +74,4 @@ https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%
 https://habr.com/ru/post/343778/
 https://isocpp.github.io/CppCoreGuidelines/
 
-Download link on books : future
+Download link on books : https://cloud.mail.ru/public/We3h/6kTm2c7od
