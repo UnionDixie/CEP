@@ -7,6 +7,7 @@ class RectangleTest
 public:
 	RectangleTest() = default;
 	~RectangleTest() = default;
-	void test1();
+	static void runAllTests();
+	static void test1();
 };
 

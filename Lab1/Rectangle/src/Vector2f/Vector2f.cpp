@@ -53,3 +53,14 @@ Vector2f operator+(const Vector2f& a, const Vector2f& b)
 	tmp.m_y += b.y();
 	return tmp;
 }
+
+bool operator==(const Vector2f& a, const Vector2f& b)
+{
+	return a.m_x == b.m_x && a.m_y == b.m_y;
+}
+
+std::istream& operator>> (std::istream& is, Vector2f& vec)
+{
+	is >> vec.m_x >> vec.m_y;
+	return is;
+}
