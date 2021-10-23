@@ -26,11 +26,13 @@ void Rectangle::scale(const Vector2f& size)
 
 void Rectangle::draw() const
 {
-	print("Left down corner\n");
+	print("Left down point\n");
 	m_point.draw();
-	print("Right up corner\n");
+
+	print("Right up point\n");
 	Vector2f rigtUP = m_point + m_size;
 	rigtUP.draw();
+
 }
 
 std::vector<Vector2f> Rectangle::vertices() const
@@ -56,13 +58,13 @@ Rectangle Rectangle::intersect(const Rectangle& rect1, const Rectangle& rect2)
 	const Vector2f& c = vertices2[0];
 	const Vector2f& d = vertices2[3];
 
-	float left = std::max(a.x(), c.x());
-	float top = std::min(b.y(), d.y());
-	float right = std::min(b.x(), d.x());
-	float bottom = std::max(a.y(), c.y());
+	const float left = std::max(a.x(), c.x());
+	const float top = std::min(b.y(), d.y());
+	const float right = std::min(b.x(), d.x());
+	const float bottom = std::max(a.y(), c.y());
 
-	float width = right - left;
-	float Height = top - bottom;
+	const float width = right - left;
+	const float Height = top - bottom;
 
 	if (width == 0 || Height == 0) 
 		print("Not Found intersect\n");
@@ -72,55 +74,37 @@ Rectangle Rectangle::intersect(const Rectangle& rect1, const Rectangle& rect2)
 
 Rectangle Rectangle::contains(const Rectangle& rect1, const Rectangle& rect2)
 {
-	float minX = std::min(rect1.minXY().first, rect2.minXY().first);
-	float minY = std::min(rect1.minXY().second, rect2.minXY().second);
-	float maxX = std::max(rect1.maxXY().first, rect2.maxXY().first);
-	float maxY = std::max(rect1.maxXY().second, rect2.maxXY().second);
+	auto min = [](float a, float b) {
+		return std::min(a, b);
+	};
+	auto max = [](float a, float b) {
+		return std::max(a, b);
+	};
+
+	float minX = std::min(rect1.findXY(min).x(), rect2.findXY(min).x());
+	float minY = std::min(rect1.findXY(min).y(), rect2.findXY(min).y());
+	float maxX = std::max(rect1.findXY(max).x(), rect2.findXY(max).x());
+	float maxY = std::max(rect1.findXY(max).y(), rect2.findXY(max).y());
 
 	return Rectangle(Vector2f(minX, minY), Vector2f(maxX - minX, maxY - minY));
 }
 
-std::pair<float, float> Rectangle::maxXY() const
+Vector2f Rectangle::findXY(const std::function<float(float, float)>& comp) const
 {
+	const std::vector<Vector2f> m_vertices = vertices();
+
+	float maxX = m_vertices[0].x();
+	float maxY = m_vertices[0].y();
+
 	const int n = 4;
-	Vector2f vector2fArray[4];
-
-	vector2fArray[0] = m_point;
-	vector2fArray[1] = m_point + Vector2f(m_size.x(), 0);
-	vector2fArray[2] = m_point + Vector2f(0, m_size.y());
-	vector2fArray[3] = m_point + m_size;
-
-	float maxX = vector2fArray[0].x();
-	float maxY = vector2fArray[0].y();
-
 	for (size_t i = 0; i < n; i++) {
-		maxX = std::max(maxX, vector2fArray[i].x());
-		maxY = std::max(maxY, vector2fArray[i].y());
+		maxX = comp(maxX, m_vertices[i].x());
+		maxY = comp(maxY, m_vertices[i].y());
 	}
 
 	return { maxX, maxY };
 }
 
-std::pair<float, float> Rectangle::minXY() const
-{
-	const int n = 4;
-	Vector2f vector2fArray[4];
-
-	vector2fArray[0] = m_point;
-	vector2fArray[1] = m_point + Vector2f(m_size.x(), 0);
-	vector2fArray[2] = m_point + Vector2f(0, m_size.y());
-	vector2fArray[3] = m_point + m_size;
-
-	float minX = vector2fArray[0].x();
-	float minY = vector2fArray[0].y();
-
-	for (size_t i = 0; i < n; i++) {
-		minX = std::min(minX, vector2fArray[i].x());
-		minY = std::min(minY, vector2fArray[i].y());
-	}
-
-	return { minX, minY };
-}
 
 
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <functional>
 
 #include "../Vector2f/Vector2f.h"
 
@@ -23,9 +24,7 @@ public:
 	static Rectangle intersect(const Rectangle& rect1, const Rectangle& rect2);
 	static Rectangle contains(const Rectangle& rect1, const Rectangle& rect2);
 private:
-	std::pair<float, float> maxXY() const;
-	std::pair<float, float> minXY() const;
-
+	Vector2f findXY(const std::function<float(float,float)>& comp) const;
 private:
 	Vector2f m_point, m_size;
 };
