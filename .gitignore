@@ -51,3 +51,5 @@ Thumbs.db
 # --------
 *.dll
 *.exe
+
+/Lab1Money/
