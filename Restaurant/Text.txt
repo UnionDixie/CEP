@@ -1,0 +1,30 @@
+База блюд:
+
+
+Dish
+Meat from chef
+2
+Teasy Meat
+Onion
+2000
+5000
+Main
+
+Dish
+Juice and bread
+2
+Juice
+Bread
+1000
+3000
+Breakfast
+
+Dish
+Duck with apple
+2
+Duck
+Apple
+10200
+30020
+Lunch
+MainDish

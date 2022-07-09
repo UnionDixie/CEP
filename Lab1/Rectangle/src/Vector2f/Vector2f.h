@@ -19,6 +19,7 @@ public:
 	void draw() const;
 	friend std::istream& operator>> (std::istream& is, Vector2f& vec);
 private:
+	void f();
 	float m_x = 0.f, m_y = 0.f;
 };
 

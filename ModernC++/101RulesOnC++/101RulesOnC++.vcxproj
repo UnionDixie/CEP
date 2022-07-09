@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d3ceff76-b3d7-47fb-913e-7425131b9c97}</ProjectGuid>
-    <RootNamespace>Rectangle</RootNamespace>
+    <ProjectGuid>{8cf6ec2e-dddb-4092-b1ae-08e030e28b34}</ProjectGuid>
+    <RootNamespace>My101RulesOnC</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -112,10 +112,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,12 +125,13 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,20 +141,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tests\RectangleTest.cpp" />
-    <ClCompile Include="src\Rectangle\Rectangle.cpp" />
-    <ClCompile Include="src\Menu\Menu.cpp" />
-    <ClCompile Include="src\App\App.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="src\Vector2f\Vector2f.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tests\RectangleTest.h" />
-    <ClInclude Include="src\Rectangle\Rectangle.h" />
-    <ClInclude Include="src\Menu\Menu.h" />
-    <ClInclude Include="src\App\App.h" />
-    <ClInclude Include="src\Utils\Utils.h" />
-    <ClInclude Include="src\Vector2f\Vector2f.h" />
+    <ClInclude Include="warning.h" />
+    <ClInclude Include="wrapper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

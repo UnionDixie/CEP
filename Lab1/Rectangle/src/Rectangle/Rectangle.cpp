@@ -26,6 +26,9 @@ void Rectangle::scale(const Vector2f& size)
 
 void Rectangle::draw() const
 {
+	if (m_size.x() == 0 || m_size.y() == 0)
+		return;
+
 	print("Left down point\n");
 	m_point.draw();
 
@@ -66,8 +69,10 @@ Rectangle Rectangle::intersect(const Rectangle& rect1, const Rectangle& rect2)
 	const float width = right - left;
 	const float Height = top - bottom;
 
-	if (width == 0 || Height == 0) 
+	if (width <= 0 || Height <= 0) {
 		print("Not Found intersect\n");
+		return Rectangle(Vector2f(0, 0), Vector2f(0, 0));
+	}
 
 	return Rectangle(Vector2f(left, bottom), Vector2f(width, Height));
 }

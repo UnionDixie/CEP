@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d3ceff76-b3d7-47fb-913e-7425131b9c97}</ProjectGuid>
-    <RootNamespace>Rectangle</RootNamespace>
+    <ProjectGuid>{8c789c68-f271-4d2f-99b9-50fdff4ef77f}</ProjectGuid>
+    <RootNamespace>MathLib</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,20 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tests\RectangleTest.cpp" />
-    <ClCompile Include="src\Rectangle\Rectangle.cpp" />
-    <ClCompile Include="src\Menu\Menu.cpp" />
-    <ClCompile Include="src\App\App.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="src\Vector2f\Vector2f.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="tests\RectangleTest.h" />
-    <ClInclude Include="src\Rectangle\Rectangle.h" />
-    <ClInclude Include="src\Menu\Menu.h" />
-    <ClInclude Include="src\App\App.h" />
-    <ClInclude Include="src\Utils\Utils.h" />
-    <ClInclude Include="src\Vector2f\Vector2f.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d3ceff76-b3d7-47fb-913e-7425131b9c97}</ProjectGuid>
-    <RootNamespace>Rectangle</RootNamespace>
+    <ProjectGuid>{85888997-0aa2-4e1a-8af0-3825858415a5}</ProjectGuid>
+    <RootNamespace>Restaurant</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,20 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tests\RectangleTest.cpp" />
-    <ClCompile Include="src\Rectangle\Rectangle.cpp" />
-    <ClCompile Include="src\Menu\Menu.cpp" />
-    <ClCompile Include="src\App\App.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="src\Vector2f\Vector2f.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tests\RectangleTest.h" />
-    <ClInclude Include="src\Rectangle\Rectangle.h" />
-    <ClInclude Include="src\Menu\Menu.h" />
-    <ClInclude Include="src\App\App.h" />
-    <ClInclude Include="src\Utils\Utils.h" />
-    <ClInclude Include="src\Vector2f\Vector2f.h" />
+    <Text Include="Text.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
