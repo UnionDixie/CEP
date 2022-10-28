@@ -31,8 +31,8 @@ CooperativeEducationalProjects
 
 <br>C++ Паттерны и проектирование</br>
 
-1 и 2 объязательно прочитать перед началом крупного проекта!
-3 и 4 уже для профи, 4 хоть и страрая, но очень мощня
+1 и 2 обязательно прочитать перед началом крупного проекта!
+3 и 4 уже для профи, 4 хоть и страрая, но очень мощная
 
 ![image](https://user-images.githubusercontent.com/77199764/136775181-554ce1a8-22b8-4abf-b35e-253f9b5b1ee1.png)
 
@@ -42,7 +42,7 @@ CooperativeEducationalProjects
 
 <br>C++ OpenGL</br>
 
-Пятую объязательно прочитать!
+5-ую обязательно прочитать!
 
 ![image](https://user-images.githubusercontent.com/77199764/136776052-ceedb562-1c7c-48cb-9e86-b1f280256524.png)
 
