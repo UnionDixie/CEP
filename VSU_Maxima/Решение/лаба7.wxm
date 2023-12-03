@@ -1,0 +1,57 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 23.05.1 ] */
+/* [wxMaxima: input   start ] */
+kill(all)$m:45$n:45$ h:1$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+for i:1 thru m do for j:1 thru n do (arraymake (u, [i,j]), u[i,j]:0)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+с:4$ k:0.01$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+for j:1 thru n do (u[1,j]:sin(%pi*j/n)+2*j/n+2*(n-j)/n, u[2,j]:u[1,j])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+for i:1 thru m do (u[i,1]:-1, u[i,n]:1)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+for i:2 thru m-1 do for j:2 thru n-1 do
+u[i+1,j]:float((с*k/(h^2))*(u[i,j+1]-
+2*u[i,j]+u[i,j-1])+u[i,j]),number$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x,y):=float(u[round(x),round(y)])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot3d(f, [x,1,m], [y,1,n], [plot_format,gnuplot])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Ошибка в загрузке графического пакета может быть решена с помощью обращения к директории :;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+maxima_tempdir: "C:\\Windows\\Temp";
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 23.05.1"$
